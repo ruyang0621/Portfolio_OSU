@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 290 Homework 6</title>
+</head>
+<body style="max-width: 1200px; margin: 0 auto">
+    <h1>Please add a new record here</h1>
+    <section style="padding: 20px; border: black solid 1px;">
+        <form>
+            <div style="display: flex; width: 80%; justify-content: space-between; margin-bottom: 15px;">
+                <label for="new_name">Name:</label>
+                <input type="text" name="new_name" class="name" id="new_name">
+                <label for="new_reps">Reps:</label>
+                <input type="number" name="new_reps" class="reps" id="new_reps">
+                <label for="new_weight">Weight:</label>
+                <input type="number" name="new_weight" class="weight" id="new_weight">
+                <label for="new_date">Date:</label>
+                <input type="date" name="new_date" class="date" id="new_date">
+            </div>
+            <div style="display: flex; margin-bottom: 15px;">
+                <span style="margin-right: 29px;">Unit:</span>
+                <input type="radio" id="new_lbs" name="new_unit" class="unit" value="lbs">
+                <label for="new_lbs">Lbs</label>
+                <input type="radio" id="new_kg" name="new_unit"  class="unit" value="kg">
+                <label for="new_lbs">Kg</label>
+            </div>
+            <button type="button" id="addBtn">Add</button>
+        </form>
+    </section>
+
+    <h1 style="margin-top: 30px;">Data: </h1>
+    <section style="padding: 20px; border: black solid 1px;" id="data-section">
+        <table style="width: 100%; text-align: center; border-spacing: 1em;" id="resultTable">
+        </table>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
