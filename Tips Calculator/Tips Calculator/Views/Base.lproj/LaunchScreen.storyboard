@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_background" translatesAutoresizingMaskIntoConstraints="NO" id="ybg-ZH-K28">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast Tips &amp; Split Bills" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niO-73-Lcd">
+                                <rect key="frame" x="42.5" y="354.5" width="329.5" height="37"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
+                                <color key="textColor" red="0.15686274509803921" green="0.21176470588235294" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="upu-K1-Bwa">
+                                <rect key="frame" x="157" y="411.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2hW-YV-3mW"/>
+                                    <constraint firstAttribute="width" constant="100" id="o5h-W4-QgW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ybg-ZH-K28" secondAttribute="bottom" id="4Be-V1-hHK"/>
+                            <constraint firstItem="ybg-ZH-K28" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="6sX-0S-K6W"/>
+                            <constraint firstItem="ybg-ZH-K28" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="D6H-aQ-mhn"/>
+                            <constraint firstItem="upu-K1-Bwa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DqE-A8-qQI"/>
+                            <constraint firstItem="upu-K1-Bwa" firstAttribute="top" secondItem="niO-73-Lcd" secondAttribute="bottom" constant="20" id="Ntd-Pd-V8h"/>
+                            <constraint firstItem="niO-73-Lcd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerYWithinMargins" constant="-80" id="WFQ-AW-B1Q"/>
+                            <constraint firstItem="niO-73-Lcd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sX2-vY-nSa"/>
+                            <constraint firstItem="ybg-ZH-K28" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="z65-Tm-wgI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="373.66071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blue_background" width="360" height="640"/>
+        <image name="dollar" width="341" height="341"/>
+    </resources>
+</document>
