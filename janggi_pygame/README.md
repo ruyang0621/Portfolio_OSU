@@ -1,7 +1,5 @@
 # portfolio-project
 
-**Remember that this project cannot be submitted late.**
-
 Write a class named JanggiGame for playing an abstract board game called Janggi. Please read the "Board", "Pieces" and the overall "Rules" section on [the Wikipedia page](https://en.wikipedia.org/wiki/Janggi).  You do _not_ have to implement the rules regarding perpetual check, position repetition, any kind of draw or the miscellaneous rules. You **do** need to correctly handle checkmate. You also need to correctly handle all piece-specific rules, e.g. generals aren't allowed to leave the palace, horses and elephants can be blocked, cannons cannot capture other cannons, etc. A good video describing the rules is [here](https://www.youtube.com/watch?v=X5IJaPoQ0oQ).
 
 A general is in check if it could be captured on the opposing player's next move. A player cannot make a move that puts or leaves their general in check. The game ends when one player **checkmates** the other's general.  You don't actually capture a general, instead you have to put it in such a position that it cannot escape being in check, meaning that no matter what, it could be captured on the next move.  This works the same as in chess, if you're familiar with that game.
@@ -39,4 +37,3 @@ game.make_move('c7','d7') #should return True
 game.make_move('a4','a4') #this will pass the Red's turn and return True
 ```
 
-The file must be named: **JanggiGame.py** and it should not contain any test code outside the main() function. Your code for this project should **not** be made public, in any manner, until after the term has ended.
