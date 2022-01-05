@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Silver Star Library - Members</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8f9991dd01.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/general_styles.css" type="text/css">
+        <link rel="stylesheet" href="static/css/members_styles.css" type="text/css">
+    </head>
+    <body style="margin-bottom: 5rem">
+        <h1 class="title">Silver Star Library - Manage Members</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light library_navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav library_navbar_nav">
+                    <a class="nav-link nav_link_text" href="/">Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="books">Books</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="booksAuthors">BooksAuthors</a></li>
+                            <li><a class="dropdown-item" href="booksCategories">BooksCategories</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link nav_link_text" href="authors">Manage Authors</a>
+                    <a class="nav-link nav_link_text" href="categories">Manage Categories</a>
+                    <a class="nav-link nav_link_text" href="copies">Manage Copies</a>
+                    <a class="nav-link nav_link_text" href="borrowRecords">Manage Borrow Records</a>
+                    <a class="nav-link nav_link_text" href="members">Manage Members</a>
+                </div>
+            </div>
+        </nav>
+        <form action="/members" class="member_form_add" method="post">
+            <p class="member_p">Add Member</p>
+            <table class="table-sm">
+            <tbody>
+              <tr>
+                <th><input type="text" name="add_first" placeholder="First Name" required class="member_input"></th>
+                <td><input type="text" name="add_last" placeholder="Last Name" required class="member_input"></td>
+              </tr>
+              <tr>
+                <th><input type="text" name="add_address" placeholder="Home Address" required class="member_input"></th>
+                <td><input type="text" name="add_email" placeholder="Email" required class="member_input"></td>
+              </tr>
+              <tr>
+                <th><input type="text" name="add_phone" placeholder="Phone Number" required class="member_input"></th>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <input type="hidden" name="action" value="add_member">
+          <input type="submit" value="Add" class="member_button">
+        </form>
+        <form action="/members" class="member_form_search" method="post">
+            <p class="member_p">Search Member By Name</p>
+            <input type="text" name="fname" placeholder="First Name" class="member_input_2" required>
+            <input type="text" name="lname" placeholder="Last Name" class="member_input_2" required>
+            <input type="hidden" name="action" value="search_member">
+            <input type="submit" value="Search" class="member_button_2">
+        </form>
+        {% if returnCode == '001' %}
+            <p class="member_p_2">The 10 Most Recent Addings</p>
+            {% if members != None %}
+                <table class="member_table">
+                    <thead>
+                        <tr>
+                            {% for key in members[0].keys() %}
+                                <th class="member_table_head">{{ key }}</th>
+                            {% endfor %}
+                            <th class="member_table_head" style="width: 4rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for member in members %}
+                            <tr>
+                                {% for key in member.keys() %}
+                                    <td class="member_table_body">{{member[key]}}</td>
+                                {% endfor %}
+                                <td class="member_table_body">
+                                    <button data-id="{{member['memId']}}" class="editBtn" data-firstName="{{member['firstName']}}" data-lastName="{{member['lastName']}}" data-home-add="{{member['memAddress']}}" data-email="{{member['memEmail']}}" data-phone="{{member['memCell']}}"><i class="far fa-edit"></i></button>
+                                    <button data-id="{{member['memId']}}" class="delBtn"><i class="far fa-trash-alt" ></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="member_msg">Oops! No Result was Found.</p>
+            {% endif %}
+        {% endif %}
+        {% if returnCode == '002' %}
+            <p class="member_p_2">Search Result</p>
+            {% if members != None %}
+                <table class="member_table">
+                    <thead>
+                        <tr>
+                            {% for key in members[0].keys() %}
+                                <th class="member_table_head">{{ key }}</th>
+                            {% endfor %}
+                            <th class="member_table_head" style="width: 4rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for member in members %}
+                            <tr>
+                                {% for key in member.keys() %}
+                                    <td class="member_table_body">{{member[key]}}</td>
+                                {% endfor %}
+                                <td class="member_table_body">
+                                    <button data-id="{{member['memId']}}" class="editBtn" data-firstName="{{member['firstName']}}" data-lastName="{{member['lastName']}}" data-home-add="{{member['memAddress']}}" data-email="{{member['memEmail']}}" data-phone="{{member['memCell']}}"><i class="far fa-edit"></i></button>
+                                    <button data-id="{{member['memId']}}" class="delBtn"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="member_msg">Oops! No Result was Found.<br>Please try another search.</p>
+            {% endif %}
+            <div class="member_btn_c"><button type="button" class="member_button_refresh"><a href="members" class="member_link">Refresh</a></button></div>
+        {% endif %}
+        {% if returnCode == '003' %}
+            <p class="member_msg">Member name {{members[0]}} {{members[1]}} was added in database.</p>
+            <div class="member_btn_c"><button type="button" class="member_button_refresh"><a href="members" class="member_link">Refresh</a></button></div>
+        {% endif %}
+        {% if returnCode == '004' %}
+            <p class="member_msg">Member name {{members[0]}} {{members[1]}} already existed into database.</p>
+            <div class="member_btn_c"><button type="button" class="member_button_refresh"><a href="members" class="member_link">Refresh</a></button></div>
+        {% endif %}
+        <div class="modal fade edit_pop" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Member</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="editModalClose1" style="border:unset; background:unset;">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/members" method="POST">
+                    <div class="modal-body">
+                        <input type="hidden" name="memId" id="memId" value="0">
+                        <input type="hidden" name="action" value="edit_member">
+                        <div class="mb-3">
+                            <label for="firstName">First Name</label>
+                            <input id="firstName" name="firstName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" name="lastName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="homeAddress">Home Address</label>
+                            <input id="homeAddress" name="homeAddress">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="editModalClose2">Close</button>
+                        <button type="submit" class="btn btn-primary" id="saveEdit">Save changes</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/members.js"></script>
+    </body>
+</html>

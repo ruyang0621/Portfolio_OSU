@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Silver Star Library - Categories</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8f9991dd01.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/general_styles.css" type="text/css">
+        <link rel="stylesheet" href="static/css/categories_styles.css" type="text/css">
+    </head>
+    <body>
+        <h1 class="title">Silver Star Library - Manage Categories</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light library_navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav library_navbar_nav">
+                    <a class="nav-link nav_link_text" href="/">Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="books">Books</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="booksAuthors">BooksAuthors</a></li>
+                            <li><a class="dropdown-item" href="booksCategories">BooksCategories</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link nav_link_text" href="authors">Manage Authors</a>
+                    <a class="nav-link nav_link_text" href="categories">Manage Categories</a>
+                    <a class="nav-link nav_link_text" href="copies">Manage Copies</a>
+                    <a class="nav-link nav_link_text" href="borrowRecords">Manage Borrow Records</a>
+                    <a class="nav-link nav_link_text" href="members">Manage Members</a>
+                </div>
+            </div>
+        </nav>
+        <form class="category_form_add" action="/categories" method="post">
+            <p class="category_p">Add Category</p>
+            <input type="text" name="add_category_name" placeholder="Category" required class="category_input">
+            <input type="hidden" name="action" value="add_category">
+            <input type="submit" value="Add" class="category_button">
+        </form>
+        <form class="category_form_search" action="/categories" method="post">
+            <p class="category_p">Search Category</p>
+            <input type="text" name="search_category_name" placeholder="Category" required class="category_input">
+            <input type="hidden" name="action" value="search_category">
+            <input type="submit" value="Search" class="category_button">
+        </form>
+        {% if returnCode == '001' %}
+            <p class="category_p_2">The 10 Most Recent Addings</p>
+            {% if categories != None %}
+                <table class="category_table">
+                    <thead>
+                        <tr>
+                            {% for key in categories[0].keys() %}
+                                <th class="category_table_head">{{ key }}</th>
+                            {% endfor %}
+                            <th class="category_table_head" style="width: 4rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for category in categories %}
+                            <tr>
+                                {% for key in category.keys() %}
+                                    <td class="category_table_body">{{category[key]}}</td>
+                                {% endfor %}
+                                <td class="category_table_body">
+                                    <button data-id="{{category['categoryId']}}" data-category="{{category['categoryName']}}" class="editBtn"><i class="far fa-edit"></i></button>
+                                    <button data-id="{{category['categoryId']}}" class="delBtn"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="category_msg">Oops! No Result was Found.</p>
+            {% endif %}
+        {% endif %}
+        {% if returnCode == '002' %}
+            <p class="category_p_2">Search Result</p>
+            {% if categories != None %}
+                <table class="category_table">
+                    <thead>
+                        <tr>
+                            {% for key in categories[0].keys() %}
+                                <th class="category_table_head">{{ key }}</th>
+                            {% endfor %}
+                            <th class="category_table_head" style="width: 4rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for category in categories %}
+                            <tr>
+                                {% for key in category.keys() %}
+                                    <td class="category_table_body">{{category[key]}}</td>
+                                {% endfor %}
+                                <td class="category_table_body">
+                                    <button data-id="{{category['categoryId']}}" data-category="{{category['categoryName']}}" class="editBtn"><i class="far fa-edit"></i></button>
+                                    <button data-id="{{category['categoryId']}}" class="delBtn"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="category_msg">Oops! No Result was Found.<br>Please try another search.</p>
+            {% endif %}
+            <div class="category_btn_c"><button type="button" class="category_button_refresh"><a href="categories" class="category_link">Refresh</a></button></div>
+        {% endif %}
+        {% if returnCode == '003' %}
+            <p class="category_msg">Category name {{categories[0]}} was added in database.</p>
+            <div class="category_btn_c"><button type="button" class="category_button_refresh"><a href="categories" class="category_link">Refresh</a></button></div>
+        {% endif %}
+        {% if returnCode == '004' %}
+            <p class="category_msg">Category name {{categories[0]}} already exsited in database.</p>
+            <div class="category_btn_c"><button type="button" class="category_button_refresh"><a href="categories" class="category_link">Refresh</a></button></div>
+        {% endif %}
+        <div class="modal fade edit_pop" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="editModalClose1" style="border:unset; background:unset;">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/categories" method="POST">
+                    <div class="modal-body">
+                        <input type="hidden" name="categoryId" id="categoryId" value="0">
+                        <input type="hidden" name="action" value="edit_category">
+                        <div class="mb-3">
+                            <label for="category">Category</label>
+                            <input id="category" name="category">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="editModalClose2">Close</button>
+                        <button type="submit" class="btn btn-primary" id="saveEdit">Save changes</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/categories.js"></script>  
+    </body>
+</html>

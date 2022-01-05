@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+/* Books */
+.book_form {
+    color: #f4e7de;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+    margin: 2rem auto;
+    width: 70%;
+    min-width: 300px;
+}
+
+.book_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_input {
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.book_button {
+    color: #f4e7de;
+    width: 7rem;
+    height: 2.3rem;
+    font-size: 1rem;
+    background-color: #c1a792;
+}
+
+.book_search{
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    width: 70%;
+    min-width: 300px;
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_button_search {
+    height: 2.3rem;
+    width: 7rem;
+    font-size: 1rem;
+    color: #f4e7de;
+    background-color: #c1a792;
+}
+
+.book_table_head {
+    width: 20rem;
+    height: 2.3rem;
+}
+
+.book_table_body {
+    width: 20rem;
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
+.book_title {
+    padding-right:1.5rem;
+}
+
+.book_publisher {
+    padding-right:1.5rem;
+}
+
+.book_icon {
+    font-size: 1.2rem;
+}
+
+.book_msg {
+    text-align: center;
+    margin-top: 5rem;
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_btn_c {
+    display: flex;
+}
+
+.book_button_refresh {
+    height: 2.3rem;
+    width: 7rem;
+    font-size: 1rem;
+    background-color: #c1a792;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.book_link {
+    color: #f4e7de;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_link:hover {
+    color: #f4e7de;
+}
+
+.editBtn {
+    color:#514d92f2;
+    border:unset;
+    background:unset;
+    padding:unset;
+}
+
+.editBtn:hover {
+    color: #160a8c;
+}
+
+.delBtn {
+    color:#514d92f2;
+    border:unset;
+    background:unset;
+    padding:unset;
+}
+
+.delBtn:hover {
+    color: #160a8c;
+}
+
+.btn-primary {
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+    border-color: #6c757d;
+}
+
+.btn-primary:hover {
+    background-color: #86644d;
+    border-color: #6c757d;
+}
+
+.edit_pop{
+    color: #413b88;
+    font-size: 1rem;
+    font-family: "Audiowide", sans-serif;
+}

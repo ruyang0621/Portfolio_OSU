@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+
+/*Theme and NavBar*/
+body {
+    background-color: #f4e7de;
+}
+
+.title {
+    color: #413b88;
+    font-weight: bolder;
+    font-size: 3.0rem;
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.library_navbar {
+    background-color: #413b88 !important;
+}
+
+.library_navbar_nav {
+    margin: auto;
+}
+
+.nav_link_text {
+    color: #f4e7de !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+    margin: 0.8rem;
+}
+
+.dropdown-toggle {
+    color: #f4e7de !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+    margin: 0.8rem;
+}
+
+.dropdown-divider {
+    color:#bebafd;
+    border-top: 0.3rem solid;
+}
+
+.dropdown-menu {
+    background-color: #413b88;
+    border:none;
+}
+
+.dropdown-item {
+    color: #f4e7de !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.dropdown-item:hover {
+    background-color: #413b88;
+}
+
+.navbar-toggler {
+    background-color: #bebafd;
+}
+
+.btn_main_page {
+    font-size: 1.5rem;
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.btn-secondary {
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.btn-secondary:hover {
+    background-color: #8a725e;
+    border-color: #8a725e;
+}
+
+.main {
+    margin: 3em;
+    text-align: center;
+   }
+
+.general_button {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}

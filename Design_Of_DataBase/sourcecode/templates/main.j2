@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Silver Star Library</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8f9991dd01.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/general_styles.css" type="text/css">
+    </head>
+    <body>
+        <h1 class="title">Silver Star Library</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light library_navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav library_navbar_nav">
+                    <a class="nav-link nav_link_text" href="/">Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="books">Books</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="booksAuthors">BooksAuthors</a></li>
+                            <li><a class="dropdown-item" href="booksCategories">BooksCategories</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link nav_link_text" href="authors">Manage Authors</a>
+                    <a class="nav-link nav_link_text" href="categories">Manage Categories</a>
+                    <a class="nav-link nav_link_text" href="copies">Manage Copies</a>
+                    <a class="nav-link nav_link_text" href="borrowRecords">Manage Borrow Records</a>
+                    <a class="nav-link nav_link_text" href="members">Manage Members</a>
+                </div>
+            </div>
+        </nav>
+        <div role="main" class="main">
+            <h1 class="title">Welcome!</h1>
+            <p class="general_paragraph">This is a brand new library management system for our new public library! This library has over 25,000 books and provide lending service to 26,000 registered members who live in this area. This database driven website system will help our awesome galactic librarians in the following ways.</p>
+                <p>Add Books</p>
+                <p>Retrieve details of books</p>
+                <p>Add new members or delete members</p>
+                <p>Handle borrow and return of books</p>
+                <br>
+                <a href="books" class="btn btn-lg btn-secondary">Let's Go</a>
+            </p>
+        </div>
+    </body>
+</html>

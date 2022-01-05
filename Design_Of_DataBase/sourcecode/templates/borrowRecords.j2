@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Silver Star Library - BorrowRecords</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8f9991dd01.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/general_styles.css" type="text/css">
+        <link rel="stylesheet" href="static/css/borrowRecords_styles.css" type="text/css">
+    </head>
+    <body>
+        <h1 class="title">Silver Star Library - Manage Borrow Records</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light library_navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav library_navbar_nav">
+                    <a class="nav-link nav_link_text" href="/">Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="books">Books</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="booksAuthors">BooksAuthors</a></li>
+                            <li><a class="dropdown-item" href="booksCategories">BooksCategories</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link nav_link_text" href="authors">Manage Authors</a>
+                    <a class="nav-link nav_link_text" href="categories">Manage Categories</a>
+                    <a class="nav-link nav_link_text" href="copies">Manage Copies</a>
+                    <a class="nav-link nav_link_text" href="borrowRecords">Manage Borrow Records</a>
+                    <a class="nav-link nav_link_text" href="members">Manage Members</a>
+                </div>
+            </div>
+        </nav>
+        <form action="/borrowRecords" class="borrow_form_add" method="POST">
+            <p class="borrow_p">Add Borrow Records</p>
+            <table class="table-sm">
+            <tbody>
+              <tr>
+                <th>
+                    <select name="member_id" required class="borrow_input">
+                    {% for member in members %}
+                        <option value="{{member['memId']}}">Member ID: {{member['memId']}}</option>
+                    {% endfor %}
+                    </select>
+                </th>
+                <td>
+                    <select name="copy_id" required class="borrow_input">
+                    {% for copy in copies %}
+                        <option value="{{copy['copyId']}}">Copy ID: {{copy['copyId']}}</option>
+                    {% endfor %}
+                    </select>
+                </td>
+              </tr>
+              <tr>
+                <th><input type="date" placeholder="Borrow Date" required class="borrow_input" name="borrow_date" style="color:#767676;"></th>
+                <td><input type="date" placeholder="Due Date" required class="borrow_input" name="due_date" style="color:#767676;"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <input type="hidden" name="action" value="add_borrow_record">
+          <p class="borow_record_p_small">Note: The copies on loan will not be showed.</p>
+          <input type="submit" value="Add" class="borrow_button">
+        </form>
+        <form action="/borrowRecords" class="borrow_form_search" method="POST">
+            <p class="borrow_p">Search Borrow Records by Member ID</p>
+            <input type="text" name="memId" placeholder="Member ID" class="borrow_input_2">
+            <input type="hidden" name="action" value="search_borrowRecords">
+            <input type="submit" value="Search" class="borrow_button_2">
+        </form>
+        {% if returnCode == '001' %}
+            <p class="borrow_p">The 10 Most Recent Addings</p>
+            {% if borrowRecords != None %}
+                <table class="borrow_table">
+                    <thead>
+                        <tr>
+                            {% for key in borrowRecords[0].keys() %}
+                                <th class="borrow_table_head">{{ key }}</th>
+                            {% endfor %}
+                            <th class="borrow_table_head" style="width: 4rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for borrowRecord in borrowRecords %}
+                            <tr>
+                                {% for key in borrowRecord.keys() %}
+                                    <td class="borrow_table_body">{{borrowRecord[key]}}</td>
+                                {% endfor %}
+                                <td class="borrow_table_body">
+                                    <button data-id="{{borrowRecord['borrowId']}}" class="editBtn" data-memId="{{borrowRecord['memId']}}"  data-copyId="{{borrowRecord['copyId']}}" data-borrowDate="{{borrowRecord['borrowDate']}}" data-dueDate="{{borrowRecord['dueDate']}}" data-passDue="{{borrowRecord['passDue']}}"><i class="far fa-edit"></i></button>
+                                    <button data-id="{{borrowRecord['borrowId']}}" class="delBtn"><i class="far fa-trash-alt" ></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="borrow_msg">Oops! No Result was Found.</p>
+            {% endif %}
+        {% endif %}
+        {% if returnCode == '002' %}
+            <p class="borrow_p">Search Result</p>
+            {% if borrowRecords != None %}
+                <table class="borrow_table">
+                    <thead>
+                        <tr>
+                            {% for key in borrowRecords[0].keys() %}
+                                <th class="borrow_table_head">{{ key }}</th>
+                            {% endfor %}
+                            <th class="borrow_table_head" style="width: 4rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for borrowRecord in borrowRecords %}
+                            <tr>
+                                {% for key in borrowRecord.keys() %}
+                                    <td class="borrow_table_body">{{borrowRecord[key]}}</td>
+                                {% endfor %}
+                                <td class="borrow_table_body">
+                                    <button data-id="{{borrowRecord['borrowId']}}" class="editBtn" data-memId="{{borrowRecord['memId']}}"  data-copyId="{{borrowRecord['copyId']}}" data-borrowDate="{{borrowRecord['borrowDate']}}" data-dueDate="{{borrowRecord['dueDate']}}" data-passDue="{{borrowRecord['passDue']}}"><i class="far fa-edit"></i></button>
+                                    <button data-id="{{borrowRecord['borrowId']}}" class="delBtn"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="borrow_msg">Oops! No Result was Found.<br>Please try another search.</p>
+            {% endif %}
+            <div class="borrow_btn_c"><button type="button" class="borrow_button_refresh"><a href="borrowRecords" class="borrow_link">Refresh</a></button></div>
+        {% endif %}
+        {% if returnCode == '003' %}
+            <p class="borrow_msg">Borrow Record relating to {{borrowRecords[0]}} {{borrowRecords[1]}} was added in database.</p>
+            <div class="borrow_btn_c"><button type="button" class="borrow_button_refresh"><a href="borrowRecords" class="borrow_link">Refresh</a></button></div>
+        {% endif %}
+        {% if returnCode == '004' %}
+            <p class="borrow_msg">Borrow Record relating to {{borrowRecords[0]}} {{borrowRecords[1]}} already existed into database.</p>
+            <div class="borrow_btn_c"><button type="button" class="borrow_button_refresh"><a href="borrowRecords" class="borrow_link">Refresh</a></button></div>
+        {% endif %}
+        <div class="modal fade edit_pop" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Borrow Records</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="editModalClose1" style="border:unset; background:unset;">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/borrowRecords" method="POST">
+                    <div class="modal-body">
+                        <input type="hidden" name="borrowId" id="borrowId" value="0">
+                        <input type="hidden" name="action" value="edit_borrow_record">
+                        <div class="mb-3">
+                            <label for="memId">Member ID</label>
+                            <input id="memId" name="memId">
+                        </div>
+                        <div class="mb-3">
+                            <label for="copyId">Copy Id</label>
+                            <input id="copyId" name="copyId">
+                        </div>
+                        <div class="mb-3">
+                            <label for="borrowDate">Borrow Date</label>
+                            <input type="date" id="borrowDate" name="borrowDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" id="dueDate" name="dueDate">
+                        </div>
+                        <div class="mb-3">
+                            <label>Pass Due</label>
+                            <label for="passDueNo">No</label>
+                            <input type="radio" id="passDueNo" name="passDue" value="0">
+                            <label for="passDueYes">Yes</label>
+                            <input type="radio" id="passDueYes" name="passDue" value="1">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="editModalClose2">Close</button>
+                        <button type="submit" class="btn btn-primary" id="saveEdit">Save changes</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/borrowRecords.js"></script>   
+    </body>
+</html>

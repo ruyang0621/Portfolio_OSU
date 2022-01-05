@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+/*BooksCategories*/
+.book_category_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.book_category_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    color: #757575;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_p_2 {
+    color: #413b88;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_table {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 15rem;
+    height: 2.3rem;
+}
+
+.book_category_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+.book_category_button_search {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    background-color: #c1a792;
+}
+
+.book_category_button {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_msg {
+    text-align: center;
+    margin-top: 5rem;
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+
+.book_category_btn_c {
+    display: flex;
+}
+
+.book_category_button_refresh {
+    height: 2.3rem;
+    width: 7rem;
+    background-color: #c1a792;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.book_category_link {
+    color: #f4e7de;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_link:hover {
+    color: #f4e7de;
+}
+
+.editBtn {
+    color:#514d92f2;
+    border:unset;
+    background:unset;
+    padding:unset;
+}
+
+.editBtn:hover {
+    color: #160a8c;
+}
+
+.delBtn {
+    color:#514d92f2;
+    border:unset;
+    background:unset;
+    padding:unset;
+}
+
+.delBtn:hover {
+    color: #160a8c;
+}
+
+.btn-primary {
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+    border-color: #6c757d;
+}
+
+.btn-primary:hover {
+    background-color: #86644d;
+    border-color: #6c757d;
+}
+
+.edit_pop{
+    color: #413b88;
+    font-size: 1rem;
+    font-family: "Audiowide", sans-serif;
+}

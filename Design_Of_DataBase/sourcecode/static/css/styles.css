@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+
+/*Theme and NavBar*/
+body {
+    background-color: #f4e7de;
+}
+
+.title {
+    color: #413b88;
+    font-weight: bolder;
+    font-size: 3.0rem;
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.library_navbar {
+    background-color: #413b88 !important;
+}
+
+.library_navbar_nav {
+    margin: auto;
+}
+
+.nav_link_text {
+    color: #f4e7de !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+    margin: 0.8rem;
+}
+
+.dropdown-toggle {
+    color: #f4e7de !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+    margin: 0.8rem;
+}
+
+.dropdown-divider {
+    color:#bebafd;
+    border-top: 0.3rem solid;
+}
+
+.dropdown-menu {
+    background-color: #413b88;
+    border:none;
+}
+
+.dropdown-item {
+    color: #f4e7de !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.dropdown-item:hover {
+    background-color: #413b88;
+}
+
+.navbar-toggler {
+    background-color: #bebafd;
+}
+
+.btn_main_page {
+    font-size: 1.5rem;
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.btn-secondary {
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.btn-secondary:hover {
+    background-color: #8a725e;
+    border-color: #8a725e;
+}
+
+
+/* Authors */
+.author_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.author_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.author_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.author_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.author_button {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.author_table {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.author_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 20rem;
+    height: 2.3rem;
+}
+
+.author_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+/* Categories */
+.category_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.category_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.category_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.category_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.category_button {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.category_table {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.category_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 20rem;
+    height: 2.3rem;
+}
+
+.category_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+/* Books */
+.book_form {
+    color: #f4e7de;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+    margin: 100px auto;
+    width: 70%;
+    min-width: 300px;
+}
+
+.book_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_input {
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.book_button {
+    color: #f4e7de;
+    background-color: #c1a792;
+}
+
+.book_search{
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    width: 70%;
+    min-width: 300px;
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_button_search {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    background-color: #c1a792;
+}
+
+.book_table_head {
+    width: 20rem;
+    height: 2.3rem;
+}
+
+.book_title {
+    padding-right:1.5rem;
+}
+
+.book_publisher {
+    padding-right:1.5rem;
+}
+
+.book_icon {
+    font-size: 1.2rem;
+}
+
+.main {
+    margin: 3em;
+    text-align: center;
+   }
+
+.general_button {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+/*Members*/
+.member_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.member_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.member_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.member_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.member_button {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.member_table {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.member_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 15rem;
+    height: 2.3rem;
+}
+
+.member_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+.member_input_2 {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.member_button_2 {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+/*Copies*/
+.copy_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.copy_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.copy_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.copy_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.copy_button {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.copy_table {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.copy_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 15rem;
+    height: 2.3rem;
+}
+
+.copy_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+.copy_input_2 {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.copy_button_2 {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+/*borrowRecords*/
+.borrow_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.borrow_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.borrow_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.borrow_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.borrow_button {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+.borrow_table {
+    width: fit-content;
+    font-family: "Audiowide", sans-serif;
+    margin:auto;
+}
+
+.borrow_table_head {
+    color: #413b88;
+    width: 10rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 2.3rem;
+}
+
+.borrow_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+.borrow_input_2 {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.borrow_button_2 {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    font-weight: bold;
+    background-color: #c1a792;
+    font-family: "Audiowide", sans-serif;
+}
+
+/*BooksAuthors*/
+.book_author_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.book_author_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_author_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_author_p_2 {
+    color: #413b88;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_author_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_author_table {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_author_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 15rem;
+    height: 2.3rem;
+}
+
+.book_author_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+.book_author_button_search {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    background-color: #c1a792;
+}
+
+/*BooksCategories*/
+.book_category_form_add {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.book_category_p {
+    color: #413b88;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_input {
+    height: 2.5rem;
+    margin-right: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_p_2 {
+    color: #413b88;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_form_search {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_table {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+.book_category_table_head {
+    color: #413b88;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 15rem;
+    height: 2.3rem;
+}
+
+.book_category_table_body {
+    color: #514d92f2;
+    font-size: 1.2rem;
+    height: 2.3rem;
+}
+
+.book_category_button_search {
+    height: 2.3rem;
+    width: 7rem;
+    color: #f4e7de;
+    background-color: #c1a792;
+}
