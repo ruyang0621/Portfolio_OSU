@@ -1,0 +1,2 @@
+1. The app bar of the List Screen should display the total sum of the 
+   number of wasted items in all posts (extra 1% added to class grade)
